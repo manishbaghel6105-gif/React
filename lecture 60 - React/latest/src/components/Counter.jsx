@@ -1,26 +1,58 @@
+import { useState } from "react";
 
-import {usestate} from 'react'
-// import React from 'react'
+function Counter({ printCountValue }) {
+  //   const result = useState(0)
+  //   const value  = result[0];
+  //   const setValue = result[1]
 
-function Counter(props) {
- const result = useState("manish");
-  console.log(result);
-   let count = 0 ; 
+  let [value, setValue] = useState(0);
+  //   const [theme , setTheme] = useState("dark")
+  //   const [user , setUser] = useState({})
 
-  function increment(){
-    count++;
+  //   let count = 0; // normal variable
+
+  //   console.log("re-render");
+  //   console.log({ count, value });
+
+  
+
+  function increment() {
+    // count++;
+    // setValue(value + 1);
+    // setValue(value + 1);
+    // setValue(value + 1);
+
+    setValue((prev) => prev + 1);
+    printCountValue(++value)
+    // setValue((prev) => prev + 1);
+    // setValue((prev) => prev + 1);
+
+    // setValue(value++)
+    // setValue(value++)
+    // setValue(value++)
+
+    // setValue(++value);
+    // printCountValue(value)
+    // setValue(++value)
+    // setValue(++value)
   }
-  function decrement(){
- count--;
+
+  function decrement() {
+    // count--;
+    // setValue(value--);
+    setValue((prev) => prev - 1)
+     printCountValue(--value)
   }
+
   return (
     <div>
       <h1>Counter</h1>
-      <button onclick ={increment}>+</button>
-      <p>{count}</p>
-      <button onclick ={decrement}>-</button>
+
+      <button onClick={increment}>+</button>
+      <p>{value}</p>
+      <button onClick={decrement}>-</button>
     </div>
-  )
+  );
 }
 
-export default Counter
+export default Counter;

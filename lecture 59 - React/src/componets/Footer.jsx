@@ -1,12 +1,13 @@
-import react from 'react'
-
-
 export function Footer() {
   return (
-    <footer>
-      <p>&copy; 2023 My App. All rights reserved.</p>
-    </footer>
+    <div>Footer</div>
   )
 }
 
-export default Footer
+function Footer2(){
+    return (
+        <div>Footer 2</div>
+    )
+}
+
+export default Footer2 

@@ -16,50 +16,48 @@
 //{ import footer from "./components/Footer"} this is also
 //  correct but we can use named export and import it like
 // import Footer from "./components/Footer";
+// console.log(2);
+
+// import Footer from "./components/Footer";
+import Body from "./components/Body";
 import NewFooter, { Footer as FooterUpdate } from "./components/Footer"; // named import
 import Navbar from "./components/Navbar"; // default import
+import { Product } from "./components/Product";
+import Products from "./components/Products";
 
 const user = {
-  name : manish ,
-  isactive : true 
+  name: "Nishant",
+  isLoggedIn: true,
 };
 
 const products = [
   {
-    id: 1,
-    name: "Nike ka Jutta",
-    price: 10922
+    title: "Nike ka Jutta",
+    price: 10922,
   },
   {
-    id: 2,
-    name: "Puma ka Shoes",
-    price: 43244
+    title: "Puma ka Shoes",
+    price: 43244,
   },
   {
-    id: 3,
-    name: "Goldstar (Old is Gold)",
-    price: 2456
-  }
+    title: "Goldstar (Old is Gold)",
+    price: 2456,
+  },
 ];
 
 function App() {
   // console.log(3);
   return (
     <div>
-      {/* <Navbar></Navbar> */}
-      <Navbar />
-      <div style={{ backgroundColor: "white", color: "black" }}>
-   {
-    products.map((product) => (
-      <div key={product.id}>
-        <h2>{product.name}</h2>
-        <p>₹ {product.price}</p>
-      </div>
-    ))}
-      </div>
+      <Navbar user={user} />
+      <Products products={products} >
+        <p>Products</p>
+        <a href="">go to this link</a>
+      </Products>
+      <Body />
       <FooterUpdate />
-      {/* <NewFooter/> */}
     </div>
   );
 }
+
 export default App;
