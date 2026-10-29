@@ -27,7 +27,8 @@ function ControlledComponent() {
 
   return (
     <div>
-      <h1>Form in React (Controlled Component) - {form.name}</h1>
+      <h1>
+        Form in React (Controlled Component) - {form.name}</h1>
       <form action="" onSubmit={signup}>
         <label htmlFor="name">Name : </label>
         <input value={form.name} type="text" name="name" id="name" onInput={handleInput} />
